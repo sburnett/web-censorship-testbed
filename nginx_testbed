@@ -1,0 +1,18 @@
+server {
+	listen 8888;  # IP drop
+	listen 8889;  # HTTP drop
+	listen 8890;  # TCP reset IP
+	listen 8891;  # TCP reset URL
+	listen 8892;  # baseline
+	listen 8893;  # control
+	listen 8894;  # control
+	server_name encore.noise.gatech.edu;
+
+	access_log /var/log/nginx/encore.noise.gatech.edu.testbed.access.log;
+	error_log /var/log/nginx/encore.noise.gatech.edu.testbed.access.log;
+
+	location / {
+		root /home/encore/git/censorship-measurement/testbed/www-root;
+		#expires -1;
+	}
+}
